@@ -3,15 +3,6 @@
 <!-- BEGIN: Head-->
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description"
-        content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>WishList - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -42,27 +33,28 @@
 
 
     <!-- BEGIN: Vendor CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('app-assets/vendors/css/vendors-rtl.min.css')}}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors-rtl.min.css') }}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/components.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/themes/dark-layout.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/themes/semi-dark-layout.css')}}"> --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap-extended.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/colors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/components.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/dark-layout.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/semi-dark-layout.css') }}">
 
     <!-- BEGIN: Page CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/pages/app-ecommerce-shop.css')}}"> --}}
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/core/colors/palette-gradient.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/pages/app-ecommerce-shop.css') }}">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css-rtl/custom-rtl.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style-rtl.css')}}"> --}}
-    <!-- END: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/custom-rtl.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-rtl.css') }}">
+    <!-- END: Custom CSS--> --}}
     <style>
         #footer {
             background: #f7f7f7;
@@ -207,7 +199,62 @@
         a {
             text-decoration: none;
         }
+
+        .card .ribbon {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            overflow: hidden;
+        }
+
+        .card .ribbon::before,
+        card .ribbon::after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            display: block;
+            border: 7px solid #ba24f0;
+            border-top-color: transparent;
+            border-left-color: transparent;
+        }
+
+        .card .ribbon::before {
+            top: 0px;
+            right: 15px;
+        }
+
+        .card .ribbon::after {
+            bottom: 15px;
+            left: 0px;
+        }
+
+        .card .ribbon span {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            transform: rotate(-45deg);
+            width: 200px;
+            background: #ba24f0;
+            padding: 10px 0;
+            color: #fff;
+            text-align: center;
+            font-size: 17px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        @include('style');
     </style>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>
+        @if (Config::get('app.locale') == 'ar')
+            {{ $data->ar_name }}
+        @endif
+        {{ $data->en_name }}
+    </title>
 </head>
 <!-- END: Head-->
 
@@ -215,10 +262,10 @@
 
 <body class="horizontal-layout horizontal-menu 2-columns ecommerce-application navbar-floating footer-static  "
     data-open="hover" data-menu="horizontal-menu" data-col="2-columns">
-
     <!-- BEGIN: Header-->
-    <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center">
-        <div class="navbar-wrapper">
+    <nav
+        class="header-navbar navbar-expand-lg navbar navbar-with-menu navbar-fixed navbar-shadow navbar-brand-center p-0">
+        <div class="navbar-wrapper" style="background-color: {{ $data->navbar_color }}">
             <div class="navbar-container content">
                 <div class="navbar-collapse" id="navbar-mobile">
                     <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
@@ -1061,8 +1108,7 @@
         <div class="container">
             <div class="row mt-5" style="padding-top: 50px">
                 <div class="col-md-3">
-                    <a href="index.html"><img
-                            src="https://logo-download.com/wp-content/data/images/2021/08/Levi_Strauss__Co.-Logo.png"
+                    <a href="index.html"><img src="{{ asset('app-assets/images/logo/logo-primary.png') }}"
                             alt="" class="img-fluid logo-footer"></a>
                     <div class="footer-about">
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
@@ -1088,9 +1134,12 @@
                         <h2>Follow Us</h2>
                         <img src="./assets/images/about/home_line.png" alt="">
                         <div class="social-icons">
-                            <li><a href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
-                            <li><a href=""><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                            <li><a href=""><i class="fa-brands fa-linkedin-in"></i> Linkedin</a></li>
+                            <li><a href="{{ $data->facebooke_account }}"><i class="feather icon-facebook"></i>
+                                    Facebook</a></li>
+                            <li><a href="{{ $data->instagram_account }}"><i class="feather icon-instagram"></i>
+                                    Instagram</a></li>
+                            <li><a href="{{ $data->twitter_account }}"><i class="feather icon-twitter"></i>
+                                    Twitter</a></li>
                         </div>
                     </div>
 
@@ -1102,10 +1151,10 @@
                         <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
                         <div class="address-links">
                             <li class="address1"><i class="fa-solid fa-location-dot"></i> Kolathur ramankulam-
-                                Malappuram Dt
-                                Kerala 679338</li>
-                            <li><a href=""><i class="fa-solid fa-phone"></i> +91 90904500112</a></li>
-                            <li><a href=""><i class="fa-solid fa-envelope"></i> mail@1234567.com</a></li>
+                            <li><a href=""><i class="fa-solid fa-phone"></i> {{ $data->website_phone }}</a>
+                            </li>
+                            <li><a href=""><i
+                                        class="fa-solid fa-envelope"></i>{{ $data->website_email }}</a></li>
                         </div>
                     </div>
                 </div>
@@ -1115,8 +1164,10 @@
         <!-- footer section end -->
         <!-- footer copy right section start -->
         <section id="copy-right">
-            <div class="copy-right-sec"><i class="fa-solid fa-copyright"></i>
-                lorem ispum lorem ispum 2022 Powerd By <a href="#">lorem ispum</a>
+            <div class="copy-right-sec"
+                style="background-color: {{ $data->footer_color }}!important; color:{{ $data->footer_text_color }}">
+                <i class="fa-solid fa-copyright"></i>
+                {{ $data->copy_right }}
             </div>
         </section>
         <!-- footer copy right section end -->

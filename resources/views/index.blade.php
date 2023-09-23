@@ -20,7 +20,7 @@
                 </ul>
             </div>
             <!-- Horizontal menu content-->
-            <div class="navbar-container main-menu-content w-100" data-menu="menu-container" style="width: 100% !important">
+            <div class="navbar-container main-menu-content w-100" data-menu="menu-container" style="">
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html"
                             data-toggle="dropdown"><i class="feather icon-home"></i><span
@@ -566,38 +566,41 @@
         </div>
     </div>
     <!-- END: Main Menu-->
-    <div class="w-100" style="">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img src="{{ asset('app-assets/images/slider/06.jpg') }}" class="img-fluid d-block w-100"
-                        alt="cf-img-1" style="height: 80vh">
+    @if ($data->slider_show)
+        <div class="w-100" style="">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="{{ asset('app-assets/images/slider/06.jpg') }}" class="img-fluid d-block w-100"
+                            alt="cf-img-1" style="height: 80vh">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="{{ asset('app-assets/images/slider/02.jpg') }}" class="img-fluid d-block w-100"
+                            alt="cf-img-2" style="height: 80vh">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('app-assets/images/slider/05.jpg') }}" class="img-fluid d-block w-100"
+                            alt="cf-img-3" style="height: 80vh">
+                    </div>
                 </div>
-                <div class="carousel-item active">
-                    <img src="{{ asset('app-assets/images/slider/02.jpg') }}" class="img-fluid d-block w-100"
-                        alt="cf-img-2" style="height: 80vh">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('app-assets/images/slider/05.jpg') }}" class="img-fluid d-block w-100"
-                        alt="cf-img-3" style="height: 80vh">
-                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    </div>
+    @endif
+
     <!-- BEGIN: Content-->
     <div class="app-content content p-0">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
-            <div class="content-header row">
+            <div class="content-header row aligin-items-center">
                 <div class="content-header-left col-md-9 col-12 mb-2">
                     <div class="row breadcrumbs-top">
                         <div class="col-12">
@@ -620,10 +623,11 @@
                 <!-- Wishlist Starts -->
                 <section id="wishlist" class="grid-view wishlist-items">
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/1.png') }}" class="img-fluid"
+                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
                                         alt="img-placeholder">
                                 </a>
                             </div>
@@ -631,94 +635,42 @@
                                 <div class="item-wrapper">
                                     <div class="item-rating">
                                         <div class="badge badge-primary badge-md">
-                                            4 <i class="feather icon-star ml-25"></i>
+                                            1 <i class="feather icon-star ml-25"></i>
                                         </div>
                                     </div>
-                                    <div style="text-align: right">
-                                        <del class="text-right" style="font-size: 1.2rem;font-weight: 500">25$</del>
+                                    <div>
                                         <h6 class="item-price">
-                                            $19.99
+                                            $4999.99
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="item-name">
                                     <a href="app-ecommerce-details.html">
-                                        Sony - ZX Series On-Ear Headphones - Black
+                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
+                                        1TB Hard Drive +
+                                        2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        These Sony ZX Series MDRZX110/BLK headphones feature neodymium magnets and 30mm
-                                        drivers for powerful,
-                                        reinforced sound. Enjoy your favorite songs with lush bass response thanks to the
-                                        Acoustic Bass Booster
-                                        technology.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="item-options text-center">
-                                <button class="btn btn-success"
-                                    style="width: 33.33%;border-radius: 0;border:none;height: 41px;">close</button>
-                                <button class="btn btn-info"
-                                    style="width: 33.33%;border-radius: 0;border:none;height: 41px;">close</button>
-                                <button class="btn btn-primary"
-                                    style="width: 33.33%;border-radius: 0;border:none;height: 41px;">close</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card ecommerce-card">
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -746,30 +698,26 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -797,25 +745,20 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -849,10 +792,11 @@
                 <!-- Wishlist Starts -->
                 <section id="wishlist" class="grid-view wishlist-items">
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/1.png') }}" class="img-fluid"
+                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
                                         alt="img-placeholder">
                                 </a>
                             </div>
@@ -860,94 +804,42 @@
                                 <div class="item-wrapper">
                                     <div class="item-rating">
                                         <div class="badge badge-primary badge-md">
-                                            4 <i class="feather icon-star ml-25"></i>
+                                            1 <i class="feather icon-star ml-25"></i>
                                         </div>
                                     </div>
                                     <div>
                                         <h6 class="item-price">
-                                            $19.99
+                                            $4999.99
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="item-name">
                                     <a href="app-ecommerce-details.html">
-                                        Sony - ZX Series On-Ear Headphones - Black
+                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
+                                        1TB Hard Drive +
+                                        2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        These Sony ZX Series MDRZX110/BLK headphones feature neodymium magnets and 30mm
-                                        drivers for powerful,
-                                        reinforced sound. Enjoy your favorite songs with lush bass response thanks to the
-                                        Acoustic Bass Booster
-                                        technology.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
-                                </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card ecommerce-card">
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -975,30 +867,26 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -1026,25 +914,20 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -1078,10 +961,11 @@
                 <!-- Wishlist Starts -->
                 <section id="wishlist" class="grid-view wishlist-items">
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/1.png') }}" class="img-fluid"
+                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
                                         alt="img-placeholder">
                                 </a>
                             </div>
@@ -1089,94 +973,42 @@
                                 <div class="item-wrapper">
                                     <div class="item-rating">
                                         <div class="badge badge-primary badge-md">
-                                            4 <i class="feather icon-star ml-25"></i>
+                                            1 <i class="feather icon-star ml-25"></i>
                                         </div>
                                     </div>
                                     <div>
                                         <h6 class="item-price">
-                                            $19.99
+                                            $4999.99
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="item-name">
                                     <a href="app-ecommerce-details.html">
-                                        Sony - ZX Series On-Ear Headphones - Black
+                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
+                                        1TB Hard Drive +
+                                        2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        These Sony ZX Series MDRZX110/BLK headphones feature neodymium magnets and 30mm
-                                        drivers for powerful,
-                                        reinforced sound. Enjoy your favorite songs with lush bass response thanks to the
-                                        Acoustic Bass Booster
-                                        technology.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
-                                </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card ecommerce-card">
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -1204,30 +1036,26 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card ecommerce-card">
+                        <div class="ribbon"><span>BEST VALUE</span></div>
                         <div class="card-content">
                             <div class="item-img text-center">
                                 <a href="app-ecommerce-details.html">
@@ -1255,25 +1083,20 @@
                                         2x512GB Solid State Drive - Gray
                                     </a>
                                 </div>
-                                <div>
-                                    <p class="item-description">
-                                        Place the sleek form of this ASUS desktop computer tower on your desk, and take your
-                                        gaming to the next
-                                        level. With Intel Core i7 processing inside, this speedy desktop keeps up with even
-                                        multilayered action
-                                        games. Nvidia graphics on this ASUS desktop computer help eliminate ghosting and
-                                        stutter so you see
-                                        every move your enemy makes.
-                                    </p>
-                                </div>
+
                             </div>
                             <div class="item-options text-center">
-                                <div class="wishlist remove-wishlist">
-                                    <i class="feather icon-x align-middle"></i> Remove
+                                <div class="wishlist bg-danger text-white">
+                                    <i class="fa fa-heart align-middle"></i>
+
+                                    {{ __('favorite') }}
                                 </div>
-                                <div class="cart move-cart">
-                                    <i class="feather icon-shopping-cart"></i> <span class="add-to-cart">Move to
-                                        cart</span>
+                                <div class="wishlist">
+                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                </div>
+                                <div class="wishlist bg-primary text-white">
+                                    <i class="feather icon-shopping-cart"></i> <span
+                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -1283,5 +1106,33 @@
 
             </div>
         </div>
+        <div class="item-features py-5">
+            <div class="row breadcrumbs-top">
+                <div class="col-12 text-center">
+                    <h2 class="content-header-title float-center mb-0">Browse by brand</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center pt-2">
+            <div class="col-12 col-md-4 mb-4 mb-md-0 ">
+                <div class="w-75 mx-auto">
+                    <img src="{{ asset('app-assets/images/logo/logo-primary.png') }}" alt="">
+                    <h5 class="mt-2 font-weight-bold">100% Original</h5>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 mb-md-0 ">
+                <div class="w-75 mx-auto">
+                    <img src="{{ asset('app-assets/images/logo/logo-primary.png') }}" alt="">
+                    <h5 class="mt-2 font-weight-bold">100% Original</h5>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4 mb-md-0 ">
+                <div class="w-75 mx-auto">
+                    <img src="{{ asset('app-assets/images/logo/logo-primary.png') }}" alt="">
+                    <h5 class="mt-2 font-weight-bold">100% Original</h5>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 @endsection
