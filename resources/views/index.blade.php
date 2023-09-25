@@ -639,6 +639,7 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <del class="font-weight-bold">$6000</del>
                                         <h6 class="item-price">
                                             $4999.99
                                         </h6>
@@ -686,6 +687,8 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <del class="font-weight-bold">$6000</del>
+
                                         <h6 class="item-price">
                                             $4999.99
                                         </h6>
@@ -733,6 +736,8 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <del class="font-weight-bold">$6000</del>
+
                                         <h6 class="item-price">
                                             $4999.99
                                         </h6>
