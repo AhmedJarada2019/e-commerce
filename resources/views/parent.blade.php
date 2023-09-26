@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="rtl">
+<html class="loading" data-textdirection="rtl">
 <!-- BEGIN: Head-->
 
 <head>
@@ -7,54 +7,58 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors.min.css') }}">
-    <!-- END: Vendor CSS-->
+    @if (Config::get('app.locale') == 'en')
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors.min.css') }}">
+        <!-- END: Vendor CSS-->
 
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap-extended.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/colors.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/components.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/dark-layout.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/semi-dark-layout.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('app-assets/css/core/menu/menu-types/horizontal-menu.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/colors/palette-gradient.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/app-ecommerce-shop.css') }}">
-    <!-- END: Page CSS-->
+        <!-- BEGIN: Theme CSS-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap-extended.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/colors.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/components.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/dark-layout.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/themes/semi-dark-layout.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- BEGIN: Page CSS-->
+        <link rel="stylesheet" type="text/css"
+            href="{{ asset('app-assets/css/core/menu/menu-types/horizontal-menu.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/colors/palette-gradient.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/pages/app-ecommerce-shop.css') }}">
+        <!-- END: Page CSS-->
 
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <!-- END: Custom CSS-->
+        <!-- BEGIN: Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+    @else
+        <!-- END: Custom CSS-->
 
 
 
-    <!-- BEGIN: Vendor CSS-->
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors-rtl.min.css') }}">
-    <!-- END: Vendor CSS-->
+        <!-- BEGIN: Vendor CSS-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/vendors-rtl.min.css') }}">
+        <!-- END: Vendor CSS-->
 
-    <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap-extended.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/colors.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/components.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/dark-layout.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/semi-dark-layout.css') }}">
+        <!-- BEGIN: Theme CSS-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/bootstrap-extended.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/colors.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/components.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/dark-layout.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/themes/semi-dark-layout.css') }}">
 
-    <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/core/colors/palette-gradient.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/pages/app-ecommerce-shop.css') }}">
-    <!-- END: Page CSS-->
+        <!-- BEGIN: Page CSS-->
+        <link rel="stylesheet" type="text/css"
+            href="{{ asset('app-assets/css-rtl/core/menu/menu-types/horizontal-menu.css') }}">
+        <link rel="stylesheet" type="text/css"
+            href="{{ asset('app-assets/css-rtl/core/colors/palette-gradient.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/pages/app-ecommerce-shop.css') }}">
+        <!-- END: Page CSS-->
 
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/custom-rtl.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-rtl.css') }}">
-    <!-- END: Custom CSS--> --}}
+        <!-- BEGIN: Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css-rtl/custom-rtl.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-rtl.css') }}">
+        <!-- END: Custom CSS-->
+    @endif
     <style>
         #footer {
             background: #f7f7f7;
@@ -287,15 +291,27 @@
                     <ul class="nav navbar-nav float-right">
                         <li class="dropdown dropdown-language nav-item"><a class="dropdown-toggle nav-link"
                                 id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><i class="flag-icon flag-icon-us"></i><span
-                                    class="selected-language">English</span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-flag"><a class="dropdown-item"
-                                    href="#" data-language="en"><i class="flag-icon flag-icon-us"></i>
-                                    English</a><a class="dropdown-item" href="#" data-language="fr"><i
-                                        class="flag-icon flag-icon-fr"></i> French</a><a class="dropdown-item"
-                                    href="#" data-language="de"><i class="flag-icon flag-icon-de"></i>
-                                    German</a><a class="dropdown-item" href="#" data-language="pt"><i
-                                        class="flag-icon flag-icon-pt"></i> Portuguese</a></div>
+                                aria-expanded="false">
+                                @if (Config::get('app.locale') == 'ar')
+                                    <i class="flag-icon flag-icon-ps"></i>
+                                    @else
+                                     <i class="flag-icon flag-icon-us"></i>
+                                @endif
+                                <span
+                                    class="selected-language">{{ app()->getLocale() }}</span></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+
+                                @foreach (config('app.available_locales') as $locale => $language)
+                                    <a href="{{ route('setLocale', $locale) }}"
+                                        class="{{ app()->getLocale() === $locale ? 'active' : '' }} dropdown-item">
+                                        {{ $language }}
+                                    </a>
+                                    {{-- <a class="dropdown-item" href="#" data-language="en"><i
+                                        class="flag-icon flag-icon-us"></i>
+                                    English</a> --}}
+                                @endforeach
+                                </select>
+                            </div>
                         </li>
                         <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i
                                     class="ficon feather icon-search"></i></a>
@@ -1094,6 +1110,7 @@
             </div>
         </div>
     </div>
+
     <!-- END: Main Menu-->
 
     @yield('content')
@@ -1192,8 +1209,34 @@
     <!-- BEGIN: Page JS-->
     <script src="{{ asset('app-assets/js/scripts/pages/app-ecommerce-shop.js') }}"></script>
     <!-- END: Page JS-->
+    <script>
+        document.querySelectorAll('.language-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                const selectedLocale = this.getAttribute('data-locale');
+                const url = `{{ route('setLocale', ':locale') }}`.replace(':locale', selectedLocale);
+                fetch(url, {
+                        method: 'POST'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.querySelectorAll('.language-link').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            this.classList.add('active');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+    </script>
 
 </body>
+
 <!-- END: Body-->
 
 </html>
