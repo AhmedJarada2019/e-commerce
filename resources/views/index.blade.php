@@ -599,191 +599,193 @@
     <div class="app-content content p-0">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
-        @foreach ($categories as $category )
-        @if ($category->shown_in_main_page == 33)
-        <div class="content-wrapper">
-            <div class="content-header row aligin-items-center">
-                <div class="content-header-left col-md-9 col-12 mb-2">
-                    <div class="row breadcrumbs-top">
-                        <div class="col-12">
-                            <h2 class="content-header-title float-left mb-0">
-                                @if (Config::get('app.locale') == 'ar') 
-                                   {{ $category->ar_name}}
-                            @else
-                               {{ $category->en_name}}
-                               @endif
-                            </h2>
+        @foreach ($categories as $category)
+            @if ($category->shown_in_main_page == 33)
+                <div class="content-wrapper">
+                    <div class="content-header row aligin-items-center">
+                        <div class="content-header-left col-md-9 col-12 mb-2">
+                            <div class="row breadcrumbs-top">
+                                <div class="col-12">
+                                    <h2 class="content-header-title float-left mb-0 mt-3">
+                                        @if (Config::get('app.locale') == 'ar')
+                                            {{ $category->ar_name }}
+                                        @else
+                                            {{ $category->en_name }}
+                                        @endif
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
+                        <div
+                            class="content-header-right text-md-right col-md-3 col-12 d-md-block d-flex align-items-center justify-content-end">
+                            <div class="form-group breadcrum-right">
+                                <div class="dropdown">
+                                    <button class="mt-3 btn-icon btn btn-primary btn-sm dropdown-toggle" type="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ __('show more') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <!-- Wishlist Starts -->
+                        <section id="wishlist" class="grid-view wishlist-items">
+                            <div class="card ecommerce-card">
+                                <div class="ribbon"><span>BEST VALUE</span></div>
+                                <div class="card-content">
+                                    <div class="item-img text-center">
+                                        <a href="app-ecommerce-details.html">
+                                            <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}"
+                                                class="img-fluid" alt="img-placeholder">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="item-wrapper">
+                                            <div class="item-rating">
+                                                <div class="badge badge-primary badge-md">
+                                                    1 <i class="feather icon-star ml-25"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <del class="font-weight-bold">$6000</del>
+                                                <h6 class="item-price">
+                                                    $4999.99
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="item-name">
+                                            <a href="app-ecommerce-details.html">
+                                                Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce
+                                                GTX1080 -
+                                                1TB Hard Drive +
+                                                2x512GB Solid State Drive - Gray
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="item-options text-center">
+                                        <div class="wishlist bg-danger text-white">
+                                            <i class="fa fa-heart align-middle"></i>
+
+                                            {{ __('favorite') }}
+                                        </div>
+                                        <div class="wishlist">
+                                            <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                        </div>
+                                        <div class="wishlist bg-primary text-white">
+                                            <i class="feather icon-shopping-cart"></i> <span
+                                                class="add-to-cart">{{ __('move_to_cart') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card ecommerce-card">
+                                <div class="ribbon"><span>BEST VALUE</span></div>
+                                <div class="card-content">
+                                    <div class="item-img text-center">
+                                        <a href="app-ecommerce-details.html">
+                                            <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}"
+                                                class="img-fluid" alt="img-placeholder">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="item-wrapper">
+                                            <div class="item-rating">
+                                                <div class="badge badge-primary badge-md">
+                                                    1 <i class="feather icon-star ml-25"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <del class="font-weight-bold">$6000</del>
+
+                                                <h6 class="item-price">
+                                                    $4999.99
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="item-name">
+                                            <a href="app-ecommerce-details.html">
+                                                Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce
+                                                GTX1080 -
+                                                1TB Hard Drive +
+                                                2x512GB Solid State Drive - Gray
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="item-options text-center">
+                                        <div class="wishlist bg-danger text-white">
+                                            <i class="fa fa-heart align-middle"></i>
+
+                                            {{ __('favorite') }}
+                                        </div>
+                                        <div class="wishlist">
+                                            <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                        </div>
+                                        <div class="wishlist bg-primary text-white">
+                                            <i class="feather icon-shopping-cart"></i> <span
+                                                class="add-to-cart">{{ __('move_to_cart') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card ecommerce-card">
+                                <div class="ribbon"><span>BEST VALUE</span></div>
+                                <div class="card-content">
+                                    <div class="item-img text-center">
+                                        <a href="app-ecommerce-details.html">
+                                            <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}"
+                                                class="img-fluid" alt="img-placeholder">
+                                        </a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="item-wrapper">
+                                            <div class="item-rating">
+                                                <div class="badge badge-primary badge-md">
+                                                    1 <i class="feather icon-star ml-25"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <del class="font-weight-bold">$6000</del>
+
+                                                <h6 class="item-price">
+                                                    $4999.99
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="item-name">
+                                            <a href="app-ecommerce-details.html">
+                                                Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce
+                                                GTX1080 -
+                                                1TB Hard Drive +
+                                                2x512GB Solid State Drive - Gray
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div class="item-options text-center">
+                                        <div class="wishlist bg-danger text-white">
+                                            <i class="fa fa-heart align-middle"></i>
+
+                                            {{ __('favorite') }}
+                                        </div>
+                                        <div class="wishlist">
+                                            <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                        </div>
+                                        <div class="wishlist bg-primary text-white">
+                                            <i class="feather icon-shopping-cart"></i> <span
+                                                class="add-to-cart">{{ __('move_to_cart') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- Wishlist Ends -->
+
                     </div>
                 </div>
-                <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-                    <div class="form-group breadcrum-right">
-                        <div class="dropdown">
-                            <button class="btn-icon btn btn-primary btn-sm dropdown-toggle" type="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ __('show more') }}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="content-body">
-                <!-- Wishlist Starts -->
-              
-              
-                <section id="wishlist" class="grid-view wishlist-items">
-                    <div class="card ecommerce-card">
-                        <div class="ribbon"><span>BEST VALUE</span></div>
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <del class="font-weight-bold">$6000</del>
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="item-options text-center">
-                                <div class="wishlist bg-danger text-white">
-                                    <i class="fa fa-heart align-middle"></i>
-
-                                    {{ __('favorite') }}
-                                </div>
-                                <div class="wishlist">
-                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
-                                </div>
-                                <div class="wishlist bg-primary text-white">
-                                    <i class="feather icon-shopping-cart"></i> <span
-                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card ecommerce-card">
-                        <div class="ribbon"><span>BEST VALUE</span></div>
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <del class="font-weight-bold">$6000</del>
-
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="item-options text-center">
-                                <div class="wishlist bg-danger text-white">
-                                    <i class="fa fa-heart align-middle"></i>
-
-                                    {{ __('favorite') }}
-                                </div>
-                                <div class="wishlist">
-                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
-                                </div>
-                                <div class="wishlist bg-primary text-white">
-                                    <i class="feather icon-shopping-cart"></i> <span
-                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card ecommerce-card">
-                        <div class="ribbon"><span>BEST VALUE</span></div>
-                        <div class="card-content">
-                            <div class="item-img text-center">
-                                <a href="app-ecommerce-details.html">
-                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}" class="img-fluid"
-                                        alt="img-placeholder">
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <div class="item-wrapper">
-                                    <div class="item-rating">
-                                        <div class="badge badge-primary badge-md">
-                                            1 <i class="feather icon-star ml-25"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <del class="font-weight-bold">$6000</del>
-
-                                        <h6 class="item-price">
-                                            $4999.99
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="item-name">
-                                    <a href="app-ecommerce-details.html">
-                                        Asus - ROG Desktop - Intel Core i7 - 16GB Memory - Double NVIDIA GeForce GTX1080 -
-                                        1TB Hard Drive +
-                                        2x512GB Solid State Drive - Gray
-                                    </a>
-                                </div>
-
-                            </div>
-                            <div class="item-options text-center">
-                                <div class="wishlist bg-danger text-white">
-                                    <i class="fa fa-heart align-middle"></i>
-
-                                    {{ __('favorite') }}
-                                </div>
-                                <div class="wishlist">
-                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
-                                </div>
-                                <div class="wishlist bg-primary text-white">
-                                    <i class="feather icon-shopping-cart"></i> <span
-                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Wishlist Ends -->
-               
-            </div>
-        </div>
-        @endif
+            @endif
         @endforeach
         <div class="item-features py-5">
             <div class="row breadcrumbs-top">

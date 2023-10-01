@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LocaleController;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/setLocale/{locale}', [LocaleController::class,'setLocale'])->name('setLocale');
+
+Route::get('/setLocale/{locale}', [LocaleController::class, 'setLocale'])->name('setLocale');
 
 Route::get('/', function () {
     $data  = DB::table('website_setting_tb')->first();
-    $categories= DB::table('categories_tb')->get();
+
+    $categories = Category::with(['categories' => function ($query) {
+        $query->where('visible', 1);
+    }])
+        ->where('visible', 1)
+        ->orderBy('rank', 'asc')
+        ->withCount('categories')
+        ->get();
     return view('index', [
         'data' => $data,
-        'categories'=>$categories
+        'categories' => $categories,
+        'menu_categories' => $categories
     ]);
 })->name('home')->middleware('LocaleMiddleware');
