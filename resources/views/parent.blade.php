@@ -559,19 +559,37 @@
                         @if ($category->shown_in_top_menu == 33 && $category->categories_count > 0)
                             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link"
                                     href="index.html" data-toggle="dropdown"><i class="feather icon-home"></i><span
-                                        data-i18n="Dashboard">{{ $category->ar_name }}</span></a>
+                                        data-i18n="Dashboard">
+                                        @if (Config::get('app.locale') == 'ar')
+                                            {{ $category->ar_name }}
+                                        @else
+                                            {{ $category->en_name }}
+                                        @endif
+                                    </span></a>
                                 <ul class="dropdown-menu">
                                     @foreach ($category->categories as $item)
                                         <li data-menu=""><a class="dropdown-item" href="dashboard-analytics.html"
                                                 data-toggle="dropdown" data-i18n="Analytics"><i
-                                                    class="feather icon-activity"></i>{{ $item->ar_name }}</a>
+                                                    class="feather icon-activity"></i>
+                                                @if (Config::get('app.locale') == 'ar')
+                                                    {{ $item->ar_name }}
+                                                @else
+                                                    {{ $item->en_name }}
+                                                @endif
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>
                             </li>
                         @elseif ($category->shown_in_top_menu == 33 && $category->parent_id == 0)
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ $category->ar_name }}</a>
+                                <a class="nav-link" href="#">
+                                    @if (Config::get('app.locale') == 'ar')
+                                        {{ $category->ar_name }}
+                                    @else
+                                        {{ $category->en_name }}
+                                    @endif
+                                </a>
                             </li>
                         @endif
                     @endforeach
