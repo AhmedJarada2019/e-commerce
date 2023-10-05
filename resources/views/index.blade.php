@@ -594,7 +594,6 @@
             </div>
         </div>
     @endif
-
     <!-- BEGIN: Content-->
     <div class="app-content content p-0">
         <div class="content-overlay"></div>
@@ -635,7 +634,7 @@
                             @foreach ($products as $product)
                                 @if ($product->product_category_id == $category->id)
                                     <div class="card ecommerce-card">
-                                        <div class="ribbon"><span>BEST VALUE</span></div>
+                                        <div class="ribbon"><span>{{ $product->special_sign }}</span></div>
                                         <div class="card-content">
                                             <div class="item-img text-center">
                                                 <a href="app-ecommerce-details.html">
@@ -647,7 +646,61 @@
                                                 <div class="item-wrapper">
                                                     <div class="item-rating">
                                                         <div class="badge badge-primary badge-md">
-                                                            1 <i class="feather icon-star ml-25"></i>
+                                                            {{ $product->rating }} <i class="feather icon-star ml-25"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <del class="font-weight-bold">{{ $product->total_price }}</del>
+                                                        <h6 class="item-price">
+                                                            {{ $product->product_after_discount }}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class="item-name">
+                                                    <a href="app-ecommerce-details.html">
+                                                        @if (Config::get('app.locale') == 'ar')
+                                                            {{ $product->ar_name }}
+                                                        @else
+                                                            {{ $product->en_name }}
+                                                        @endif
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                            <div class="item-options text-center">
+                                                <div class="wishlist bg-danger text-white">
+                                                    <i class="fa fa-heart align-middle"></i>
+
+                                                    {{ __('favorite') }}
+                                                </div>
+                                                <div class="wishlist">
+                                                    <i class="feather icon-repeat align-middle"></i> {{ __('compare') }}
+                                                </div>
+                                                <div class="wishlist bg-primary text-white">
+                                                    <i class="feather icon-shopping-cart"></i> <span
+                                                        class="add-to-cart">{{ __('move_to_cart') }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endforeach
+                            @foreach ($products as $product)
+                                @if ($product->product_category_id == $category->id)
+                                    <div class="card ecommerce-card">
+                                        <div class="ribbon"><span>{{ $product->special_sign }}</span></div>
+                                        <div class="card-content">
+                                            <div class="item-img text-center">
+                                                <a href="app-ecommerce-details.html">
+                                                    <img src="{{ asset('app-assets/images/pages/eCommerce/2.png') }}"
+                                                        class="img-fluid" alt="img-placeholder">
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="item-wrapper">
+                                                    <div class="item-rating">
+                                                        <div class="badge badge-primary badge-md">
+                                                            {{ $product->rating }} <i class="feather icon-star ml-25"></i>
                                                         </div>
                                                     </div>
                                                     <div>
@@ -687,8 +740,8 @@
                                 @endif
                             @endforeach
                         </section>
-                        <!-- Wishlist Ends -->
 
+                        <!-- Wishlist Ends -->
                     </div>
                 </div>
             @endif
@@ -696,7 +749,7 @@
         <div class="item-features py-5">
             <div class="row breadcrumbs-top">
                 <div class="col-12 text-center">
-                    <h2 class="content-header-title float-center mb-0">Browse by brand</h2>
+                    <h2 class="content-header-title float-center mb-0">{{ __('browse_by_brand') }}</h2>
                 </div>
             </div>
         </div>

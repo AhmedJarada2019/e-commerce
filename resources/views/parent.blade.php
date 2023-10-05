@@ -624,28 +624,30 @@
                 </div>
                 <div class="col-md-3">
                     <div class="useful-link">
-                        <h2>Useful Links</h2>
+                        <h2>{{ __('follow_us') }}</h2>
                         <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
                         <div class="use-links">
-                            <li><a href="index.html"><i class="fa-solid fa-angles-right"></i> Home</a></li>
-                            <li><a href="about.html"><i class="fa-solid fa-angles-right"></i> About Us</a></li>
-                            <li><a href="gallery.html"><i class="fa-solid fa-angles-right"></i> Gallery</a></li>
-                            <li><a href="contact.html"><i class="fa-solid fa-angles-right"></i> Contact</a></li>
+                            <li><a href="index.html"><i class="fa-solid fa-angles-right"></i>{{ __('home') }}</a>
+                            </li>
+                            <li><a href="about.html"><i class="fa-solid fa-angles-right"></i>{{ __('about') }}</a>
+                            </li>
+                            <li><a href="gallery.html"><i
+                                        class="fa-solid fa-angles-right"></i>{{ __('gallery') }}</a></li>
                         </div>
                     </div>
 
                 </div>
                 <div class="col-md-3">
                     <div class="social-links">
-                        <h2>Follow Us</h2>
+                        <h2>{{ __('useful_links') }}</h2>
                         <img src="./assets/images/about/home_line.png" alt="">
                         <div class="social-icons">
                             <li><a href="{{ $data->facebooke_account }}"><i class="feather icon-facebook"></i>
-                                    Facebook</a></li>
+                                    {{ __('Facebook') }}</a></li>
                             <li><a href="{{ $data->instagram_account }}"><i class="feather icon-instagram"></i>
-                                    Instagram</a></li>
+                                    {{ __('Instagram') }}</a></li>
                             <li><a href="{{ $data->twitter_account }}"><i class="feather icon-twitter"></i>
-                                    Twitter</a></li>
+                                    {{ __('Twitter') }}</a></li>
                         </div>
                     </div>
 
@@ -653,7 +655,7 @@
                 </div>
                 <div class="col-md-3">
                     <div class="address">
-                        <h2>Address</h2>
+                        <h2>{{ __('address') }}</h2>
                         <img src="./assets/images/about/home_line.png" alt="" class="img-fluid">
                         <div class="address-links">
                             <li class="address1"><i class="fa-solid fa-location-dot"></i> Kolathur ramankulam-

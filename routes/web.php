@@ -37,8 +37,8 @@ Route::get('/', function () {
             ->first();
 
         if ($productPrices && $product->tax_percent > 0) {
-            $product->total_price = number_format((float)($productPrices->price * $product->tax_percent), 2, '.', '');
-            $product->total_discount = number_format((float)($productPrices->discount * $product->tax_percent), 2, '.', '');
+            $product->total_price = number_format((float)($productPrices->price * $product->tax_percent  / 100), 2, '.', '');
+            $product->total_discount = number_format((float)($productPrices->discount * $product->tax_percent / 100), 2, '.', '');
             $product->product_after_discount = $product->total_price - $product->total_discount;
         } else {
             $product->total_price = number_format((float)$productPrices->price, 2, '.', '');

@@ -1,5 +1,9 @@
 <?php
 
+$columnCount = $data->product_count_inrow;
+$gridTemplateColumns = str_repeat('1fr ', $columnCount);
+echo $gridTemplateColumns;
+
 echo "
     .bg-primary,
     .text-primary,
@@ -16,4 +20,13 @@ echo "
     .content-header{
         background-color : $data->category_background_color_title
     }
+    @media (min-width: 992px) {
+  .ecommerce-application .wishlist-items.grid-view {
+    grid-template-columns :
+    $gridTemplateColumns
+     ;
+  }
+}
     ";
+?>
+{{-- @dd($gridTemplateColumns) --}}
